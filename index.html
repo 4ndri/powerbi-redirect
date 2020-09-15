@@ -17,6 +17,14 @@
               window.open(url,'_self');
             }
           }
+          var btn = document.createElement("BUTTON");
+          btn.innerHTML = "Open";
+          btn.onClick = redirect;
+          document.body.appendChild(btn);
+          
+          var iframe = document.createElement("iframe");
+          iframe.href = url;
+          document.body.appendChild(iframe);
         }catch(ex){
           console.error(ex);
           var btn = document.createElement("BUTTON");
