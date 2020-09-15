@@ -9,12 +9,16 @@
   <body>
     <script type="text/javascript">
       function redirect(){
-        var url = window.location.search;
-        if(url){
-          url = url.replace(/^\?/,'');
+        try{
+          var url = window.location.search;
           if(url){
-            window.location.href = url;
+            url = url.replace(/^\?/,'');
+            if(url){
+              window.location.href = url;
+            }
           }
+        }catch(ex){
+          console.error(ex);
         }
       }
       setTimeout(redirect,1000);
