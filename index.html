@@ -9,8 +9,7 @@
   <body>
     <script type="text/javascript">
       function redirect(){
-        const urlParams = new URLSearchParams(window.location.search);
-        const url = urlParams.get('url');
+        const url = window.location.search;
         if(url){
           window.location.href = url;
         }
