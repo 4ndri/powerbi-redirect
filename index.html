@@ -6,9 +6,16 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script type="text/javascript">
-      window.location.href = 'abasurl:';
-    </script>
+    
   </head>
-  <body></body>
+  <body>
+    <script type="text/javascript">
+      function redirect(){
+        const urlParams = new URLSearchParams(window.location.search);
+        const myParam = urlParams.get('myParam');
+        window.location.href = 'abasurl:';
+      }
+      setTimeout(redirect,1000);
+    </script>
+  </body>
 </html>
