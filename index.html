@@ -15,10 +15,15 @@
             url = url.replace(/^\?/,'');
             if(url){
               window.location.href = url;
+              window.open(url);
             }
           }
         }catch(ex){
           console.error(ex);
+          var btn = document.createElement("BUTTON");
+          btn.innerHTML = "Open";
+          btn.onClick = redirect;
+          document.body.appendChild(btn);
         }
       }
       setTimeout(redirect,1000);
