@@ -6,7 +6,7 @@
     <title>Redirecting custom protocol</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
-  <body onclick="redirect()" style="height:100%;">
+  <body style="height:100%;">
     <script type="text/javascript">
       function redirect(){
         try{
@@ -17,23 +17,14 @@
               window.open(url,'_self');
             }
           }
-          var btn = document.createElement("BUTTON");
-          btn.innerHTML = "Open";
-          btn.onClick = redirect;
-          document.body.appendChild(btn);
-          
-          var iframe = document.createElement("iframe");
-          iframe.href = url;
-          document.body.appendChild(iframe);
+          var btn=document.getElementById('btn-redirect');
+          btn.click();
         }catch(ex){
           console.error(ex);
-          var btn = document.createElement("BUTTON");
-          btn.innerHTML = "Open";
-          btn.onClick = redirect;
-          document.body.appendChild(btn);
         }
       }
       setTimeout(redirect,1000);
     </script>
+    <button id="btn-redirect" onclick="redirect();">Open</button>
   </body>
 </html>
