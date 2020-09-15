@@ -9,9 +9,12 @@
   <body>
     <script type="text/javascript">
       function redirect(){
-        const url = window.location.search;
+        var url = window.location.search;
         if(url){
-          window.location.href = url;
+          url = url.replace(/^\?/,'');
+          if(url){
+            window.location.href = url;
+          }
         }
       }
       setTimeout(redirect,1000);
