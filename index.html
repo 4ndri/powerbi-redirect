@@ -3,17 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Page Title</title>
+    <title>Redirecting custom protocol</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    
   </head>
   <body>
     <script type="text/javascript">
       function redirect(){
         const urlParams = new URLSearchParams(window.location.search);
-        const myParam = urlParams.get('myParam');
-        window.location.href = 'abasurl:';
+        const url = urlParams.get('url');
+        window.location.href = url;
       }
       setTimeout(redirect,1000);
     </script>
