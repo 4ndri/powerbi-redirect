@@ -14,13 +14,13 @@
           if(url){
             url = url.replace(/^\?/,'');
             if(url){
+              
+              let w = window.location.replace(url);
               if(doClose){
                 setTimeout(function(){
                   close();
                 }, 500);
               }
-              window.location.replace(url);
-              
             }
           }
         }catch(ex){
