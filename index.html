@@ -8,14 +8,14 @@
   </head>
   <body style="height:100%;">
     <script type="text/javascript">
-      function redirect(close){
+      function redirect(doClose){
         try{
           var url = window.location.search;
           if(url){
             url = url.replace(/^\?/,'');
             if(url){
               window.location.replace(url);
-              if(close){
+              if(doClose){
                 window.close();
               }
             }
