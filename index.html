@@ -15,7 +15,7 @@
             url = url.replace(/^\?/,'');
             if(url){
               
-              let w = window.open(url);
+              let w = window.open(url,'_self');
               if(doClose){
                 setTimeout(function(){
                   close();
