@@ -8,14 +8,16 @@
   </head>
   <body style="height:100%;">
     <script type="text/javascript">
-      function redirect(){
+      function redirect(close){
         try{
           var url = window.location.search;
           if(url){
             url = url.replace(/^\?/,'');
             if(url){
               window.location.replace(url);
-              window.close();
+              if(close){
+                window.close();
+              }
             }
           }
         }catch(ex){
@@ -24,6 +26,6 @@
       }
       setTimeout(redirect,1000);
     </script>
-    <button id="btn-redirect" onclick="redirect();">Open</button>
+    <button id="btn-redirect" onclick="redirect(true);">Open</button>
   </body>
 </html>
