@@ -15,7 +15,9 @@
             url = url.replace(/^\?/,'');
             if(url){
               if(doClose){
-                setTimeout(function(){window.close();}, 500);
+                setTimeout(function(){
+                  close();
+                }, 500);
               }
               window.location.replace(url);
               
