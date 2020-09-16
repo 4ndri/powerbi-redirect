@@ -15,11 +15,12 @@
             url = url.replace(/^\?/,'');
             if(url){
               
-              let w = window.location.replace(url);
+              let w = window.open(url);
               if(doClose){
                 setTimeout(function(){
                   close();
-                }, 500);
+                  w.close();
+                }, 1000);
               }
             }
           }
@@ -27,7 +28,7 @@
           console.error(ex);
         }
       }
-      setTimeout(redirect,1000);
+      setTimeout(redirect,500);
     </script>
     <button id="btn-redirect" onclick="redirect(true);">Open</button>
   </body>
